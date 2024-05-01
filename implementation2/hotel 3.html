@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="hotel1style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="e:\photos\سونستا سان جورج\Dark Photo Elegant Classy Hotel Booking Instagram Post_20240430_003657_٠٠٠٠.png" alt="Hotel Logo">
+        </div>
+        <h1>Sonsta San Gorg</h1>
+        <nav>
+            <ul>
+                <li><a href="test.html">Home page </a></li>
+                <li><a href="contact us.html">contact us</a></li>
+                <li><a href="about us.html">About us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="rooms" class="room-section">
+            <h2>Our Rooms</h2>
+            <div class="room">
+                <img src="e:\photos\سونستا سان جورج\FB_IMG_1714487309398.jpg" alt="Room 1">
+                <div class="prop">
+                    <h3>Single Room</h3>
+                    <p>Price: $100 per night</p>
+                </div>
+                <button onclick="bookRoom('Single Room')">Book Now</button>
+            </div>
+            <div class="room">
+                <img src="e:\photos\سونستا سان جورج\FB_IMG_1714487343642.jpg" alt="Room 1">
+                <div class="prop">
+                    <h3>Single Room</h3>
+                    <p>Price: $100 per night</p>
+                </div>
+                <button onclick="bookRoom('Single Room')">Book Now</button>
+            </div>
+            <div class="room">
+                <img src="e:\photos\سونستا سان جورج\FB_IMG_1714487316450.jpg" alt="Room 2">
+                <div class="prop">
+                    <h3>Double Room</h3>
+                    <p>Price: $150 per night</p>
+                </div>
+                <button onclick="bookRoom('Double Room')">Book Now</button>
+            </div>
+            <div class="room">
+                <img src="e:\photos\سونستا سان جورج\FB_IMG_1714487348107.jpg" alt="Room 2">
+                <div class="prop">
+                    <h3>Single Room</h3>
+                    <p>Price: $100 per night</p>
+                </div>
+                <button onclick="bookRoom('Double Room')">Book Now</button>
+            </div>
+        </section>
+        <section id="booking" class="booking-section">
+            <h2>Book Your Room</h2>
+            <form action="booking.php" method="post">
+                <label for="room-type">Room Type:</label>
+                <select name="room-type" id="room-type">
+                    <option value="Single Room">Single Room</option>
+                    <option value="Double Room">Double Room</option>
+                </select>
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" name="check-out" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <p>Phone: +123456789</p>
+            <p>Location: 123 Hotel Street, City, Country</p>
+        </div>
+        <p>&copy; 2024 Our Hotel. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function bookRoom(roomType) {
+            alert('You have booked ' + roomType);
+        }
+    </script>
+</body>
+</html>
