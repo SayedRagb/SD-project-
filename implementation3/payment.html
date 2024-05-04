@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Page</title>
+<link rel="stylesheet" href="payment style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Secure Payment</h2>
+  <form id="paymentForm" onsubmit="return validateForm()">
+    <div class="form-group">
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+    </div>
+    <div class="form-group">
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+    </div>
+    <div class="form-group">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+    </div>
+    <button type="submit">Pay Now</button>
+  </form>
+  <div id="feedback"></div>
+</div>
+
+<script>
+    function validateForm() {
+  var cardNumber = document.getElementById("cardNumber").value;
+  var expiryDate = document.getElementById("expiryDate").value;
+  var cvv = document.getElementById("cvv").value;
+  
+  // Basic validation
+  if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+    showFeedback("Invalid card number");
+    return false;
+  }
+  if (!expiryDate.match(/^\d{2}\/\d{2}$/)) {
+    showFeedback("Invalid expiry date. Please use format MM/YY");
+    return false;
+  }
+  if (cvv.length !== 3 || isNaN(cvv)) {
+    showFeedback("Invalid CVV");
+    return false;
+  }
+  
+  // Simulate payment processing (you would replace this with actual payment processing logic)
+  setTimeout(function() {
+    showFeedback("Payment successful! Thank you for your purchase.", true);
+  }, 2000); // Simulating a delay for payment processing
+  
+  return false; // Prevent form submission
+}
+
+function showFeedback(message, success = false) {
+  var feedback = document.getElementById("feedback");
+  feedback.innerHTML = message;
+  feedback.style.color = success ? "green" : "red";
+}
+</script>
+</body>
+</html>

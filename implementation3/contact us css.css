@@ -1,0 +1,100 @@
+/* Add this to your existing styles.css file */
+body{
+    background-color: rgb(236, 220, 198);
+}
+/* Contact form styles */
+.contact-form {
+    padding: 20px;
+}
+
+.contact-form h1 {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: rgb(11, 128, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgb(236, 220, 198);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links img {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border-radius: 20px;
+}
+
+/* Header styles */
+header {
+    padding: 20px 0;
+    background-image: url('pictures/bg & logo/Modern Games Laptop_20240430_025421_٠٠٠٠.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 260px;
+    text-align: centers;
+    
+}
+
+
+/* .logo img {
+    display: block;
+    width: 150px; /* Adjust as needed */
+    /* height: auto;
+    margin: 0 auto;
+} */ 
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 40%;
+    color: red;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}

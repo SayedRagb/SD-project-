@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golie Ville</title>
+    <link rel="stylesheet" href="hotel1style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="e:\photos\جولي فيل\Dark Photo Elegant Classy Hotel Booking Instagram Post_20240430_004032_٠٠٠٠.png" alt="Hotel Logo">
+        </div>
+        <h1>Golie Ville</h1>
+        <nav>
+            <ul>
+                <li><a href="test.html">Home page </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="rooms" class="room-section">
+            <h2>Available Rooms</h2>
+            <div class="room">
+                <img src="e:\photos\جولي فيل\images.jpeg" alt="Room 1">
+                <div class="prop">
+                    <h3>Single Room</h3>
+                    <p>Price: $100 per night</p>
+                </div>
+                <button onclick="bookRoom1('Single Room')" id="button1">Book Now</button>
+                <div id="booking-status1"></div>
+            </div>
+            <div class="room">
+                <img src="e:\photos\جولي فيل\FB_IMG_1714488567999.jpg" alt="Room 1">
+                <div class="prop">
+                    <h3>Double Room</h3>
+                    <p>Price: $200 per night</p>
+                </div>
+                <button onclick="bookRoom2('Single Room')" id="button2">Book Now</button>
+                <div id="booking-status2"></div>
+            </div>
+            <div class="room">
+                <img src="e:\photos\جولي فيل\images (2).jpeg" alt="Room 2">
+                <div class="prop">
+                    <h3>Double Room</h3>
+                    <p>Price: $200 per night</p>
+                </div>
+                <button onclick="bookRoom3('Double Room')" id="button3">Book Now</button>
+                <div id="booking-status3"></div>
+            </div>
+            <div class="room">
+                <img src="e:\photos\جولي فيل\FB_IMG_1714488554555.jpg" alt="Room 2">
+                <div class="prop">
+                    <h3>Double Room</h3>
+                    <p>Price: $200 per night</p>
+                </div>
+                <button onclick="bookRoom4('Double Room')" id="button4">Book Now</button>
+                <div id="booking-status4"></div>
+            </div>
+        </section>
+        <section id="booking" class="booking-section">
+            <h2>Book Your Room</h2>
+            <form action="booking.php" method="post">
+                <!-- <label for="room-type">Room Type:</label>
+                <select name="room-type" id="room-type">
+                    <option value="Single Room">Single Room</option>
+                    <option value="Double Room">Double Room</option>
+                </select> -->
+                <label for="check-in">Check-in Date:</label>
+                <input type="date" id="check-in" name="check-in" required>
+                <label for="check-out">Check-out Date:</label>
+                <input type="date" id="check-out" name="check-out" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="payment-container">
+            <div>
+                <h1 id="hh">Pay Here</h1>
+                <form action="payment.html" target="_blank">
+                    <button type="button" onclick="validateBooking()">PAY</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contact-info">
+            <p>Phone: +123456789</p>
+            <p>Location: 123 Hotel Street, City, Country</p>
+        </div>
+        <p>&copy; 2024 Our Hotel. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function bookRoom1() {
+            // alert('You have booked ' + roomType);
+            var button = document.getElementById("button1");
+            button.innerHTML="Booked";
+            button.Disabled=true; //disabled the button after click
+
+            var cancellationDuration = 300000; // 5 minutes
+            bookingTimer = setTimeout(cancelBooking1, cancellationDuration);
+
+             // Update booking status
+            var bookingStatus = document.getElementById("booking-status1");
+            bookingStatus.innerHTML = "Booking in progress... <button onclick='cancelBooking1()'>Cancel</button>";
+        }
+        function bookRoom2() {
+            // alert('You have booked ' + roomType);
+            var button = document.getElementById("button2");
+            button.innerHTML="Booked";
+            button.Disabled=true; //disabled the button after click
+
+            var cancellationDuration = 300000; // 5 minutes
+            bookingTimer = setTimeout(cancelBooking2, cancellationDuration);
+
+             // Update booking status
+            var bookingStatus = document.getElementById("booking-status2");
+            bookingStatus.innerHTML = "Booking in progress... <button onclick='cancelBooking2()'>Cancel</button>";
+        }
+        function bookRoom3() {
+            // alert('You have booked ' + roomType);
+            var button = document.getElementById("button3");
+            button.innerHTML="Booked";
+            button.Disabled=true; //disabled the button after click
+
+            var cancellationDuration = 300000; // 5 minutes
+            bookingTimer = setTimeout(cancelBooking3, cancellationDuration);
+
+             // Update booking status
+            var bookingStatus = document.getElementById("booking-status3");
+            bookingStatus.innerHTML = "Booking in progress... <button onclick='cancelBooking3()'>Cancel</button>";
+        }
+        function bookRoom4() {
+            // alert('You have booked ' + roomType);
+            var button = document.getElementById("button4");
+            button.innerHTML="Booked";
+            button.Disabled=true; //disabled the button after click
+
+            var cancellationDuration = 300000; // 5 minutes
+            bookingTimer = setTimeout(cancelBooking4, cancellationDuration);
+
+             // Update booking status
+            var bookingStatus = document.getElementById("booking-status4");
+            bookingStatus.innerHTML = "Booking in progress... <button onclick='cancelBooking4()'>Cancel</button>";
+        }
+
+                
+        function cancelBooking1() {
+            clearTimeout(bookingTimer); // Cancel the booking timer
+            var button = document.getElementById("button1");
+            button.disabled = false; // Enable the booking button
+            document.getElementById("booking-status1").innerHTML = ""; // Clear booking status
+            button.innerHTML="Book now";
+        }
+        function cancelBooking2() {
+            clearTimeout(bookingTimer); // Cancel the booking timer
+            var button = document.getElementById("button2");
+            button.disabled = false; // Enable the booking button
+            document.getElementById("booking-status2").innerHTML = ""; // Clear booking status
+            button.innerHTML="Book now";
+        }
+        function cancelBooking3() {
+            clearTimeout(bookingTimer); // Cancel the booking timer
+            var button = document.getElementById("button3");
+            button.disabled = false; // Enable the booking button
+            document.getElementById("booking-status3").innerHTML = ""; // Clear booking status
+            button.innerHTML="Book now";
+        }
+        function cancelBooking4() {
+            clearTimeout(bookingTimer); // Cancel the booking timer
+            var button = document.getElementById("button4");
+            button.disabled = false; // Enable the booking button
+            document.getElementById("booking-status4").innerHTML = ""; // Clear booking status
+            button.innerHTML="Book now";
+        }
+
+        function validateBooking() {
+                    // Get the values of room booking, check-in date, and check-out date
+                    // var roomBooked = document.getElementById("button1").bookRoom1();
+                    var checkInDate = document.getElementById("check-in").value;
+                    var checkOutDate = document.getElementById("check-out").value;
+                    
+                    // Check if room is booked and check-in and check-out dates are provided
+                    if ( checkInDate && checkOutDate) {
+                        // If all conditions are met, proceed to the payment page
+                        window.location.href = "payment.html";
+                    } else {
+                        // If any condition is not met, display an error message
+                        alert("Please book a room and provide both check-in and check-out dates before proceeding to payment.");
+                    }
+        }
+    </script>
+</body>
+</html>
